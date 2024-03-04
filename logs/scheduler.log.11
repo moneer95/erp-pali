@@ -1,0 +1,7 @@
+2024-03-02 06:20:11,474 INFO scheduler Scheduled Job Complete: frappe.integrations.doctype.razorpay_settings.razorpay_settings.capture_payment for pali
+2024-03-02 06:20:11,532 INFO scheduler Scheduled Job Start: frappe.email.doctype.email_account.email_account.notify_unreplied for pali
+2024-03-02 06:20:11,665 INFO scheduler Scheduled Job Complete: frappe.email.doctype.email_account.email_account.notify_unreplied for pali
+2024-03-02 06:20:11,722 INFO scheduler Scheduled Job Start: frappe.email.doctype.email_account.email_account.pull for pali
+2024-03-02 06:20:11,869 INFO scheduler Scheduled Job Complete: frappe.email.doctype.email_account.email_account.pull for pali
+2024-03-02 06:20:11,926 INFO scheduler Scheduled Job Start: frappe.email.queue.flush for pali
+2024-03-02 06:20:12,037 INFO scheduler Scheduled Job Complete: frappe.email.queue.flush for pali

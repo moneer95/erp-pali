@@ -1,0 +1,97 @@
+2024-03-01 10:17:04,723 DEBUG cd frappe-13-charity && python3 -m venv env
+2024-03-01 10:17:07,250 DEBUG cd frappe-13-charity && /home/monir/frappe-13-charity/env/bin/python -m pip install --quiet --upgrade pip
+2024-03-01 10:17:09,333 DEBUG cd frappe-13-charity && /home/monir/frappe-13-charity/env/bin/python -m pip install --quiet wheel
+2024-03-01 10:17:15,230 LOG Getting frappe
+2024-03-01 10:17:15,230 DEBUG cd frappe-13-charity/apps && git clone https://github.com/frappe/frappe.git --branch version-13 --depth 1 --origin upstream
+2024-03-01 10:17:32,878 LOG Installing frappe
+2024-03-01 10:17:32,878 DEBUG cd /home/monir/frappe-13-charity && /home/monir/frappe-13-charity/env/bin/python -m pip install --quiet --upgrade -e /home/monir/frappe-13-charity/apps/frappe 
+2024-03-01 10:18:40,116 DEBUG cd /home/monir/frappe-13-charity/apps/frappe && yarn install
+2024-03-01 10:20:32,542 WARNING restart failed: Couldn't find supervisorctl in PATH
+2024-03-01 10:20:32,543 DEBUG cd frappe-13-charity && bench build
+2024-03-01 10:20:32,628 INFO /usr/local/bin/bench build
+2024-03-01 10:21:18,616 LOG setting up backups
+2024-03-01 10:21:18,662 LOG backups were set up
+2024-03-01 10:21:18,663 INFO Bench frappe-13-charity initialized
+2024-03-01 10:21:19,191 INFO A newer version of bench is available: 5.16.0 → 5.22.3
+2024-03-01 10:22:40,475 INFO /usr/local/bin/bench new-site pali
+2024-03-01 10:23:17,266 INFO /usr/local/bin/bench use pali
+2024-03-01 10:23:29,168 INFO /usr/local/bin/bench start
+2024-03-01 10:23:29,513 INFO /usr/local/bin/bench serve --port 8007
+2024-03-01 10:23:29,546 INFO /usr/local/bin/bench worker
+2024-03-01 10:23:29,554 INFO /usr/local/bin/bench schedule
+2024-03-01 10:23:29,555 INFO /usr/local/bin/bench watch
+2024-03-01 10:24:26,213 INFO /usr/local/bin/bench start
+2024-03-01 10:24:26,433 INFO /usr/local/bin/bench schedule
+2024-03-01 10:24:26,435 INFO /usr/local/bin/bench watch
+2024-03-01 10:24:26,474 INFO /usr/local/bin/bench serve --port 8007
+2024-03-01 10:24:26,478 INFO /usr/local/bin/bench worker
+2024-03-01 10:41:37,717 INFO /usr/local/bin/bench start
+2024-03-01 10:41:37,943 INFO /usr/local/bin/bench serve --port 8007
+2024-03-01 10:41:37,946 INFO /usr/local/bin/bench schedule
+2024-03-01 10:41:37,951 INFO /usr/local/bin/bench worker
+2024-03-01 10:41:37,954 INFO /usr/local/bin/bench watch
+2024-03-01 10:50:02,868 INFO /usr/local/bin/bench start
+2024-03-01 10:50:03,122 INFO /usr/local/bin/bench worker
+2024-03-01 10:50:03,123 INFO /usr/local/bin/bench schedule
+2024-03-01 10:50:03,123 INFO /usr/local/bin/bench watch
+2024-03-01 10:50:03,126 INFO /usr/local/bin/bench serve --port 8007
+2024-03-01 12:00:01,621 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-01 16:14:10,883 INFO /usr/local/bin/bench start
+2024-03-01 16:14:11,099 INFO /usr/local/bin/bench watch
+2024-03-01 16:14:11,137 INFO /usr/local/bin/bench serve --port 8007
+2024-03-01 16:14:11,139 INFO /usr/local/bin/bench worker
+2024-03-01 16:14:11,143 INFO /usr/local/bin/bench schedule
+2024-03-01 18:00:01,549 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-02 05:57:05,386 INFO /usr/local/bin/bench start
+2024-03-02 05:57:05,730 INFO /usr/local/bin/bench schedule
+2024-03-02 05:57:05,730 INFO /usr/local/bin/bench watch
+2024-03-02 05:57:05,747 INFO /usr/local/bin/bench worker
+2024-03-02 05:57:05,749 INFO /usr/local/bin/bench serve --port 8007
+2024-03-02 06:00:01,915 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-02 10:19:05,766 INFO /usr/local/bin/bench start
+2024-03-02 10:19:05,981 INFO /usr/local/bin/bench serve --port 8007
+2024-03-02 10:19:05,986 INFO /usr/local/bin/bench worker
+2024-03-02 10:19:05,987 INFO /usr/local/bin/bench schedule
+2024-03-02 10:19:06,014 INFO /usr/local/bin/bench watch
+2024-03-02 12:00:02,039 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-03 08:28:17,362 INFO /usr/local/bin/bench start
+2024-03-03 08:28:17,797 INFO /usr/local/bin/bench schedule
+2024-03-03 08:28:17,800 INFO /usr/local/bin/bench watch
+2024-03-03 08:28:17,819 INFO /usr/local/bin/bench serve --port 8007
+2024-03-03 08:28:17,824 INFO /usr/local/bin/bench worker
+2024-03-03 10:18:14,565 INFO /usr/local/bin/bench start
+2024-03-03 10:18:14,778 INFO /usr/local/bin/bench serve --port 8007
+2024-03-03 10:18:14,783 INFO /usr/local/bin/bench watch
+2024-03-03 10:18:14,823 INFO /usr/local/bin/bench schedule
+2024-03-03 10:18:14,826 INFO /usr/local/bin/bench worker
+2024-03-03 12:00:01,433 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-03 12:42:23,416 INFO /usr/local/bin/bench start
+2024-03-03 12:42:23,632 INFO /usr/local/bin/bench serve --port 8007
+2024-03-03 12:42:23,638 INFO /usr/local/bin/bench schedule
+2024-03-03 12:42:23,677 INFO /usr/local/bin/bench watch
+2024-03-03 12:42:23,680 INFO /usr/local/bin/bench worker
+2024-03-03 13:55:53,793 INFO /usr/local/bin/bench start
+2024-03-03 13:55:54,007 INFO /usr/local/bin/bench serve --port 8007
+2024-03-03 13:55:54,008 INFO /usr/local/bin/bench watch
+2024-03-03 13:55:54,045 INFO /usr/local/bin/bench worker
+2024-03-03 13:55:54,055 INFO /usr/local/bin/bench schedule
+2024-03-03 14:14:39,932 INFO /usr/local/bin/bench start
+2024-03-03 14:14:40,364 INFO /usr/local/bin/bench worker
+2024-03-03 14:14:40,382 INFO /usr/local/bin/bench schedule
+2024-03-03 14:14:40,383 INFO /usr/local/bin/bench serve --port 8007
+2024-03-03 14:14:40,397 INFO /usr/local/bin/bench watch
+2024-03-04 08:22:25,734 INFO /usr/local/bin/bench start
+2024-03-04 08:22:26,602 INFO /usr/local/bin/bench schedule
+2024-03-04 08:22:26,626 INFO /usr/local/bin/bench worker
+2024-03-04 08:22:26,704 INFO /usr/local/bin/bench watch
+2024-03-04 08:22:26,704 INFO /usr/local/bin/bench serve --port 8007
+2024-03-04 09:26:42,680 INFO /usr/local/bin/bench new-app Charity_App
+2024-03-04 09:26:42,695 LOG creating new app charity_app
+2024-03-04 09:28:16,820 LOG Installing charity_app
+2024-03-04 09:28:16,821 DEBUG cd /home/monir/frappe-13-charity && /home/monir/frappe-13-charity/env/bin/python -m pip install --quiet --upgrade -e /home/monir/frappe-13-charity/apps/charity_app 
+2024-03-04 09:28:20,682 DEBUG bench build --app charity_app
+2024-03-04 09:28:20,881 INFO /usr/local/bin/bench build --app charity_app
+2024-03-04 09:28:24,036 WARNING restart failed: Couldn't find supervisorctl in PATH
+2024-03-04 09:28:24,691 INFO A newer version of bench is available: 5.16.0 → 5.22.3
+2024-03-04 09:41:55,486 INFO /usr/local/bin/bench --site pali install-app charity_app
+2024-03-04 09:42:34,445 INFO /usr/local/bin/bench --site pali install-app charity_app
