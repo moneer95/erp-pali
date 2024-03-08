@@ -1,0 +1,4 @@
+2024-03-03 08:56:25,284 INFO scheduler Scheduled Job Start: frappe.email.doctype.email_account.email_account.pull for pali
+2024-03-03 08:56:25,429 INFO scheduler Scheduled Job Complete: frappe.email.doctype.email_account.email_account.pull for pali
+2024-03-03 08:56:25,487 INFO scheduler Scheduled Job Start: frappe.email.queue.flush for pali
+2024-03-03 08:56:25,596 INFO scheduler Scheduled Job Complete: frappe.email.queue.flush for pali

@@ -28,3 +28,27 @@ Backup Summary for pali at 2024-03-03 12:00:02.500573
 Config  : ./pali/private/backups/20240303_120002-pali-site_config_backup.json 161.0B
 Database: ./pali/private/backups/20240303_120002-pali-database.sql.gz         281.6KiB
 Backup for Site pali has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _84fc5b246d98b743 -p********** _84fc5b246d98b743 -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./pali/private/backups/20240304_180002-pali-database.sql.gz
+
+Backup Summary for pali at 2024-03-04 18:00:03.182458
+Config  : ./pali/private/backups/20240304_180002-pali-site_config_backup.json 205.0B
+Database: ./pali/private/backups/20240304_180002-pali-database.sql.gz         296.2KiB
+Backup for Site pali has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _84fc5b246d98b743 -p********** _84fc5b246d98b743 -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./pali/private/backups/20240306_120004-pali-database.sql.gz
+
+Backup Summary for pali at 2024-03-06 12:00:05.645884
+Config  : ./pali/private/backups/20240306_120004-pali-site_config_backup.json 205.0B
+Database: ./pali/private/backups/20240306_120004-pali-database.sql.gz         761.2KiB
+Backup for Site pali has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _84fc5b246d98b743 -p********** _84fc5b246d98b743 -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./pali/private/backups/20240307_120002-pali-database.sql.gz
+
+Backup Summary for pali at 2024-03-07 12:00:02.958845
+Config  : ./pali/private/backups/20240307_120002-pali-site_config_backup.json 205.0B
+Database: ./pali/private/backups/20240307_120002-pali-database.sql.gz         1.3MiB
+Backup for Site pali has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _84fc5b246d98b743 -p********** _84fc5b246d98b743 -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./pali/private/backups/20240307_180001-pali-database.sql.gz
+
+Backup Summary for pali at 2024-03-07 18:00:04.014189
+Config  : ./pali/private/backups/20240307_180001-pali-site_config_backup.json 205.0B
+Database: ./pali/private/backups/20240307_180001-pali-database.sql.gz         1.4MiB
+Backup for Site pali has been successfully completed

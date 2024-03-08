@@ -95,3 +95,96 @@
 2024-03-04 09:28:24,691 INFO A newer version of bench is available: 5.16.0 → 5.22.3
 2024-03-04 09:41:55,486 INFO /usr/local/bin/bench --site pali install-app charity_app
 2024-03-04 09:42:34,445 INFO /usr/local/bin/bench --site pali install-app charity_app
+2024-03-04 14:46:18,077 INFO /usr/local/bin/bench start
+2024-03-04 14:46:18,610 INFO /usr/local/bin/bench watch
+2024-03-04 14:46:18,611 INFO /usr/local/bin/bench schedule
+2024-03-04 14:46:18,619 INFO /usr/local/bin/bench worker
+2024-03-04 14:46:18,620 INFO /usr/local/bin/bench serve --port 8007
+2024-03-04 15:31:05,835 INFO /usr/local/bin/bench start
+2024-03-04 15:31:06,181 INFO /usr/local/bin/bench serve --port 8007
+2024-03-04 15:31:06,186 INFO /usr/local/bin/bench worker
+2024-03-04 15:31:06,219 INFO /usr/local/bin/bench watch
+2024-03-04 15:31:06,223 INFO /usr/local/bin/bench schedule
+2024-03-04 15:59:20,140 INFO /usr/local/bin/bench set-config developer-mode 1
+2024-03-04 15:59:30,912 INFO /usr/local/bin/bench set-config developer_mode 1
+2024-03-04 15:59:38,360 INFO /usr/local/bin/bench start
+2024-03-04 15:59:38,670 INFO /usr/local/bin/bench schedule
+2024-03-04 15:59:38,670 INFO /usr/local/bin/bench watch
+2024-03-04 15:59:38,680 INFO /usr/local/bin/bench serve --port 8007
+2024-03-04 15:59:38,682 INFO /usr/local/bin/bench worker
+2024-03-04 16:10:04,128 INFO /usr/local/bin/bench --site pali clear-cache
+2024-03-04 16:10:12,349 INFO /usr/local/bin/bench --site pali clear-cache
+2024-03-04 16:10:15,603 INFO /usr/local/bin/bench start
+2024-03-04 16:10:15,820 INFO /usr/local/bin/bench serve --port 8007
+2024-03-04 16:10:15,823 INFO /usr/local/bin/bench worker
+2024-03-04 16:10:15,823 INFO /usr/local/bin/bench schedule
+2024-03-04 16:10:15,859 INFO /usr/local/bin/bench watch
+2024-03-04 16:11:47,748 INFO /usr/local/bin/bench setup requirements --dev
+2024-03-04 16:11:48,818 INFO A newer version of bench is available: 5.16.0 → 5.22.3
+2024-03-04 16:11:54,085 INFO /usr/local/bin/bench start
+2024-03-04 16:11:54,303 INFO /usr/local/bin/bench serve --port 8007
+2024-03-04 16:11:54,343 INFO /usr/local/bin/bench worker
+2024-03-04 16:11:54,344 INFO /usr/local/bin/bench schedule
+2024-03-04 16:11:54,346 INFO /usr/local/bin/bench watch
+2024-03-04 18:00:02,094 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-05 14:27:59,715 INFO /usr/local/bin/bench start]
+2024-03-05 14:28:02,369 INFO /usr/local/bin/bench start
+2024-03-05 14:28:02,716 INFO /usr/local/bin/bench serve --port 8007
+2024-03-05 14:28:02,717 INFO /usr/local/bin/bench worker
+2024-03-05 14:28:02,721 INFO /usr/local/bin/bench watch
+2024-03-05 14:28:02,723 INFO /usr/local/bin/bench schedule
+2024-03-06 10:29:13,981 INFO /usr/local/bin/bench start
+2024-03-06 10:29:14,321 INFO /usr/local/bin/bench serve --port 8007
+2024-03-06 10:29:14,321 INFO /usr/local/bin/bench watch
+2024-03-06 10:29:14,364 INFO /usr/local/bin/bench schedule
+2024-03-06 10:29:14,366 INFO /usr/local/bin/bench worker
+2024-03-06 12:00:01,887 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-06 15:11:59,310 INFO /usr/local/bin/bench start
+2024-03-06 15:11:59,665 INFO /usr/local/bin/bench schedule
+2024-03-06 15:11:59,666 INFO /usr/local/bin/bench worker
+2024-03-06 15:11:59,672 INFO /usr/local/bin/bench watch
+2024-03-06 15:11:59,677 INFO /usr/local/bin/bench serve --port 8007
+2024-03-07 11:33:57,785 INFO /usr/local/bin/bench start
+2024-03-07 11:33:58,133 INFO /usr/local/bin/bench serve --port 8007
+2024-03-07 11:33:58,133 INFO /usr/local/bin/bench worker
+2024-03-07 11:33:58,156 INFO /usr/local/bin/bench schedule
+2024-03-07 11:33:58,156 INFO /usr/local/bin/bench watch
+2024-03-07 12:00:01,496 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-07 16:55:18,874 INFO /usr/local/bin/bench start
+2024-03-07 16:55:19,207 INFO /usr/local/bin/bench serve --port 8007
+2024-03-07 16:55:19,207 INFO /usr/local/bin/bench watch
+2024-03-07 16:55:19,215 INFO /usr/local/bin/bench worker
+2024-03-07 16:55:19,220 INFO /usr/local/bin/bench schedule
+2024-03-07 17:14:27,396 INFO /usr/local/bin/bench start
+2024-03-07 17:14:27,615 INFO /usr/local/bin/bench serve --port 8007
+2024-03-07 17:14:27,659 INFO /usr/local/bin/bench worker
+2024-03-07 17:14:27,662 INFO /usr/local/bin/bench watch
+2024-03-07 17:14:27,662 INFO /usr/local/bin/bench schedule
+2024-03-07 17:20:36,928 INFO /usr/local/bin/bench clear-cache
+2024-03-07 17:20:40,112 INFO /usr/local/bin/bench clear-cache
+2024-03-07 17:20:42,227 INFO /usr/local/bin/bench start
+2024-03-07 17:20:42,448 INFO /usr/local/bin/bench serve --port 8007
+2024-03-07 17:20:42,457 INFO /usr/local/bin/bench schedule
+2024-03-07 17:20:42,495 INFO /usr/local/bin/bench watch
+2024-03-07 17:20:42,497 INFO /usr/local/bin/bench worker
+2024-03-07 17:21:23,017 INFO /usr/local/bin/bench start
+2024-03-07 17:21:23,241 INFO /usr/local/bin/bench watch
+2024-03-07 17:21:23,254 INFO /usr/local/bin/bench worker
+2024-03-07 17:21:23,269 INFO /usr/local/bin/bench serve --port 8007
+2024-03-07 17:21:23,289 INFO /usr/local/bin/bench schedule
+2024-03-07 18:00:01,168 INFO /usr/local/bin/bench --verbose --site all backup
+2024-03-08 14:15:03,121 INFO /usr/local/bin/bench start
+2024-03-08 14:15:03,472 INFO /usr/local/bin/bench watch
+2024-03-08 14:15:03,475 INFO /usr/local/bin/bench schedule
+2024-03-08 14:15:03,485 INFO /usr/local/bin/bench serve --port 8007
+2024-03-08 14:15:03,490 INFO /usr/local/bin/bench worker
+2024-03-08 15:30:12,546 INFO /usr/local/bin/bench start
+2024-03-08 15:30:12,894 INFO /usr/local/bin/bench serve --port 8007
+2024-03-08 15:30:12,896 INFO /usr/local/bin/bench watch
+2024-03-08 15:30:12,935 INFO /usr/local/bin/bench schedule
+2024-03-08 15:30:12,939 INFO /usr/local/bin/bench worker
+2024-03-08 17:17:15,698 INFO /usr/local/bin/bench start
+2024-03-08 17:17:15,922 INFO /usr/local/bin/bench serve --port 8007
+2024-03-08 17:17:15,931 INFO /usr/local/bin/bench worker
+2024-03-08 17:17:15,953 INFO /usr/local/bin/bench watch
+2024-03-08 17:17:15,964 INFO /usr/local/bin/bench schedule

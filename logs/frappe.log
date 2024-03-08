@@ -1,0 +1,240 @@
+2024-03-06 12:44:24,646 ERROR frappe Could not take error snapshot: characters_written
+Site: pali
+Form Dict: {'data_import': 'Registered People Import on 2024-03-06 12:40:59.296898', 'google_sheets_url': 'https://docs.google.com/spreadsheets/d/18K-0LZiIo-JqlizHlpQ_X2LD-3nMz8v5IXZjVLdYgbk/edit#gid=298174249', 'cmd': 'frappe.core.doctype.data_import.data_import.get_preview_from_template'}
+Traceback (most recent call last):
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1375, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/app.py", line 66, in application
+    response = frappe.api.handle()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/api.py", line 55, in handle
+    return frappe.handler.handle()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/handler.py", line 38, in handle
+    data = execute_cmd(cmd)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/handler.py", line 76, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/__init__.py", line 1474, in call
+    return fn(*args, **newargs)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/data_import.py", line 87, in get_preview_from_template
+    return frappe.get_doc("Data Import", data_import).get_preview_from_template(
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/data_import.py", line 52, in get_preview_from_template
+    i = self.get_importer()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/data_import.py", line 82, in get_importer
+    return Importer(self.reference_doctype, data_import=self)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/importer.py", line 44, in __init__
+    self.import_file = ImportFile(
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/importer.py", line 329, in __init__
+    self.raw_data = self.get_data_from_template_file()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/importer.py", line 346, in get_data_from_template_file
+    content = get_csv_content_from_google_sheets(self.google_sheets_url)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/utils/csvutils.py", line 205, in get_csv_content_from_google_sheets
+    response = requests.get(url, headers=headers)
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/sessions.py", line 725, in send
+    history = [resp for resp in gen]
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/sessions.py", line 725, in <listcomp>
+    history = [resp for resp in gen]
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/sessions.py", line 266, in resolve_redirects
+    resp = self.send(
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/utils/error.py", line 50, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/utils/error.py", line 143, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2024-03-06 12:44:40,020 ERROR frappe Could not take error snapshot: characters_written
+Site: pali
+Form Dict: {'data_import': 'Registered People Import on 2024-03-06 12:40:59.296898', 'google_sheets_url': 'https://docs.google.com/spreadsheets/d/18K-0LZiIo-JqlizHlpQ_X2LD-3nMz8v5IXZjVLdYgbk/edit#gid=298174249', 'cmd': 'frappe.core.doctype.data_import.data_import.get_preview_from_template'}
+Traceback (most recent call last):
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/app.py", line 66, in application
+    response = frappe.api.handle()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/api.py", line 55, in handle
+    return frappe.handler.handle()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/handler.py", line 38, in handle
+    data = execute_cmd(cmd)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/handler.py", line 76, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/__init__.py", line 1474, in call
+    return fn(*args, **newargs)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/data_import.py", line 87, in get_preview_from_template
+    return frappe.get_doc("Data Import", data_import).get_preview_from_template(
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/data_import.py", line 52, in get_preview_from_template
+    i = self.get_importer()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/data_import.py", line 82, in get_importer
+    return Importer(self.reference_doctype, data_import=self)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/importer.py", line 44, in __init__
+    self.import_file = ImportFile(
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/importer.py", line 329, in __init__
+    self.raw_data = self.get_data_from_template_file()
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/core/doctype/data_import/importer.py", line 346, in get_data_from_template_file
+    content = get_csv_content_from_google_sheets(self.google_sheets_url)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/utils/csvutils.py", line 223, in get_csv_content_from_google_sheets
+    response.raise_for_status()
+  File "/home/monir/frappe-13-charity/env/lib/python3.10/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://docs.google.com/spreadsheets/d/18K-0LZiIo-JqlizHlpQ_X2LD-3nMz8v5IXZjVLdYgbk/export?format=csv&gid=298174249
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/utils/error.py", line 50, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/monir/frappe-13-charity/apps/frappe/frappe/utils/error.py", line 143, in get_snapshot
+    value = pydoc.text.repr(getattr(evalue, name))
+AttributeError: characters_written
+2024-03-07 11:40:49,217 ERROR frappe New Exception collected with id: 2024-03-07 11:40:49.169892-127.0.0.1-968
+Site: pali
+Form Dict: {'doc': '{"name":"abu daqa family- 8 members","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"1b45a2ef59","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"ayman","age":0,"doctype":"Basic Info"},{"name":"c4fa3b75f7","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"rawan","age":0,"doctype":"Basic Info"},{"name":"948407fa83","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":3,"docstatus":0,"first_name":"farah","age":0,"doctype":"Basic Info"},{"name":"6ef91c5c90","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":4,"docstatus":0,"first_name":"sand","age":0,"doctype":"Basic Info"},{"name":"4e5d5ec478","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":5,"docstatus":0,"first_name":"joud","age":0,"doctype":"Basic Info"},{"name":"82dfcecd7c","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":6,"docstatus":0,"first_name":"jad","age":0,"doctype":"Basic Info"},{"name":"ee43abc599","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":7,"docstatus":0,"first_name":"mohammed","age":0,"doctype":"Basic Info"},{"name":"18d8d8b7d2","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":8,"docstatus":0,"first_name":"ezaldeen","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T09:40:47.476Z"}', 'cmd': 'charity_app.api.execute_function'}
+2024-03-07 11:41:29,404 ERROR frappe New Exception collected with id: 2024-03-07 11:41:29.361182-127.0.0.1-95f
+Site: pali
+Form Dict: {'doc': '{"name":"abu daqa family- 8 members","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"1b45a2ef59","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"ayman","age":0,"doctype":"Basic Info"},{"name":"c4fa3b75f7","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"rawan","age":0,"doctype":"Basic Info"},{"name":"948407fa83","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":3,"docstatus":0,"first_name":"farah","age":0,"doctype":"Basic Info"},{"name":"6ef91c5c90","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":4,"docstatus":0,"first_name":"sand","age":0,"doctype":"Basic Info"},{"name":"4e5d5ec478","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":5,"docstatus":0,"first_name":"joud","age":0,"doctype":"Basic Info"},{"name":"82dfcecd7c","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":6,"docstatus":0,"first_name":"jad","age":0,"doctype":"Basic Info"},{"name":"ee43abc599","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":7,"docstatus":0,"first_name":"mohammed","age":0,"doctype":"Basic Info"},{"name":"18d8d8b7d2","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":8,"docstatus":0,"first_name":"ezaldeen","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T09:40:47.476Z"}', 'cmd': 'charity_app.api.execute_function'}
+2024-03-07 11:49:27,968 ERROR frappe New Exception collected with id: 2024-03-07 11:49:27.922126-127.0.0.1-24b
+Site: pali
+Form Dict: {'doc': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T09:49:26.470Z"}', 'cmd': 'charity_app.api.execute_function'}
+2024-03-07 11:54:57,176 ERROR frappe New Exception collected with id: 2024-03-07 11:54:57.130561-127.0.0.1-69f
+Site: pali
+Form Dict: {'doc': '{"name":"abu daqa family- 8 members","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"1b45a2ef59","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"ayman","age":0,"doctype":"Basic Info"},{"name":"c4fa3b75f7","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"rawan","age":0,"doctype":"Basic Info"},{"name":"948407fa83","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":3,"docstatus":0,"first_name":"farah","age":0,"doctype":"Basic Info"},{"name":"6ef91c5c90","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":4,"docstatus":0,"first_name":"sand","age":0,"doctype":"Basic Info"},{"name":"4e5d5ec478","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":5,"docstatus":0,"first_name":"joud","age":0,"doctype":"Basic Info"},{"name":"82dfcecd7c","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":6,"docstatus":0,"first_name":"jad","age":0,"doctype":"Basic Info"},{"name":"ee43abc599","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":7,"docstatus":0,"first_name":"mohammed","age":0,"doctype":"Basic Info"},{"name":"18d8d8b7d2","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":8,"docstatus":0,"first_name":"ezaldeen","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T09:54:06.775Z"}', 'cmd': 'charity_app.api.execute_function'}
+2024-03-07 11:57:21,402 ERROR frappe New Exception collected with id: 2024-03-07 11:57:21.400162-127.0.0.1-c68
+Site: pali
+Form Dict: {'doc': '{"name":"abu daqa family- 8 members","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"1b45a2ef59","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"ayman","age":0,"doctype":"Basic Info"},{"name":"c4fa3b75f7","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"rawan","age":0,"doctype":"Basic Info"},{"name":"948407fa83","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":3,"docstatus":0,"first_name":"farah","age":0,"doctype":"Basic Info"},{"name":"6ef91c5c90","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":4,"docstatus":0,"first_name":"sand","age":0,"doctype":"Basic Info"},{"name":"4e5d5ec478","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":5,"docstatus":0,"first_name":"joud","age":0,"doctype":"Basic Info"},{"name":"82dfcecd7c","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":6,"docstatus":0,"first_name":"jad","age":0,"doctype":"Basic Info"},{"name":"ee43abc599","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":7,"docstatus":0,"first_name":"mohammed","age":0,"doctype":"Basic Info"},{"name":"18d8d8b7d2","owner":"Administrator","creation":"2024-03-06 13:17:34.870704","modified":"2024-03-06 13:17:34.870704","modified_by":"Administrator","parent":"abu daqa family- 8 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":8,"docstatus":0,"first_name":"ezaldeen","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T09:54:06.775Z"}', 'cmd': 'charity_app.api.execute_function'}
+2024-03-07 12:07:38,600 ERROR frappe New Exception collected with id: 2024-03-07 12:07:38.597095-127.0.0.1-790
+Site: pali
+Form Dict: {'doc': '{"name":"al najar family- 6 members","owner":"Administrator","creation":"2024-03-06 13:17:34.824676","modified":"2024-03-06 13:17:34.824676","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"6fce3018f0","owner":"Administrator","creation":"2024-03-06 13:17:34.824676","modified":"2024-03-06 13:17:34.824676","modified_by":"Administrator","parent":"al najar family- 6 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"muhamad","age":0,"doctype":"Basic Info"},{"name":"002ac0bf37","owner":"Administrator","creation":"2024-03-06 13:17:34.824676","modified":"2024-03-06 13:17:34.824676","modified_by":"Administrator","parent":"al najar family- 6 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"nourhan","age":0,"doctype":"Basic Info"},{"name":"cf667103dc","owner":"Administrator","creation":"2024-03-06 13:17:34.824676","modified":"2024-03-06 13:17:34.824676","modified_by":"Administrator","parent":"al najar family- 6 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":3,"docstatus":0,"first_name":"shahed","age":0,"doctype":"Basic Info"},{"name":"4e40cbfdb7","owner":"Administrator","creation":"2024-03-06 13:17:34.824676","modified":"2024-03-06 13:17:34.824676","modified_by":"Administrator","parent":"al najar family- 6 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":4,"docstatus":0,"first_name":"habeba","age":0,"doctype":"Basic Info"},{"name":"ceacee30f6","owner":"Administrator","creation":"2024-03-06 13:17:34.824676","modified":"2024-03-06 13:17:34.824676","modified_by":"Administrator","parent":"al najar family- 6 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":5,"docstatus":0,"first_name":"nashwa","age":0,"doctype":"Basic Info"},{"name":"c75888cd74","owner":"Administrator","creation":"2024-03-06 13:17:34.824676","modified":"2024-03-06 13:17:34.824676","modified_by":"Administrator","parent":"al najar family- 6 members","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":6,"docstatus":0,"first_name":"alsaid","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T10:07:37.286Z"}', 'cmd': 'charity_app.api.execute_function'}
+2024-03-07 13:51:53,959 ERROR frappe New Exception collected with id: 2024-03-07 13:51:53.912250-127.0.0.1-580
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T11:51:53.291Z"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 13:52:24,557 ERROR frappe New Exception collected with id: 2024-03-07 13:52:24.513528-127.0.0.1-225
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T11:51:53.291Z"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 13:52:27,605 ERROR frappe New Exception collected with id: 2024-03-07 13:52:27.603668-127.0.0.1-8f5
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-06 13:17:34.862914","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T11:52:27.133Z"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 13:55:13,070 ERROR frappe New Exception collected with id: 2024-03-07 13:55:13.027766-127.0.0.1-590
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","idx":0,"docstatus":0,"rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":1,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"family_name__last_name_":"al Dayemmmmmmmmmmmmmmmmmm","define_the_needs_here":"jkjk"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 13:58:58,715 ERROR frappe New Exception collected with id: 2024-03-07 13:58:58.670465-127.0.0.1-7fd
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","idx":0,"docstatus":0,"family_name__last_name_":"al Dayemmmmmmmmmmmmmmmmmm","rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":1,"define_the_needs_here":"jkjk","do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T11:58:27.335Z"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 13:59:20,413 ERROR frappe New Exception collected with id: 2024-03-07 13:59:20.339879-127.0.0.1-2e2
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","idx":0,"docstatus":0,"family_name__last_name_":"al Dayemmmmmmmmmmmmmmmmmm","rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":1,"define_the_needs_here":"jkjk","do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T11:58:27.335Z"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 13:59:20,413 ERROR frappe New Exception collected with id: 2024-03-07 13:59:20.340097-127.0.0.1-3ae
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","idx":0,"docstatus":0,"family_name__last_name_":"al Dayemmmmmmmmmmmmmmmmmm","rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":1,"define_the_needs_here":"jkjk","do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T11:58:27.335Z"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 13:59:48,691 ERROR frappe New Exception collected with id: 2024-03-07 13:59:48.648086-127.0.0.1-ec5
+Site: pali
+Form Dict: {'frm': '{"name":"al dayim","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","idx":0,"docstatus":0,"family_name__last_name_":"al Dayemmmmmmmmmmmmmmmmmm","rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":1,"define_the_needs_here":"jkjk","do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"04ec7f2da3","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"fadi","age":0,"doctype":"Basic Info"},{"name":"cf37161cfd","owner":"Administrator","creation":"2024-03-06 13:17:34.862914","modified":"2024-03-07 13:54:23.113712","modified_by":"Administrator","parent":"al dayim","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":2,"docstatus":0,"first_name":"baghdad","age":0,"doctype":"Basic Info"}],"need":[],"__last_sync_on":"2024-03-07T11:58:27.335Z"}', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:03:54,322 ERROR frappe New Exception collected with id: 2024-03-07 14:03:54.274232-127.0.0.1-e8c
+Site: pali
+Form Dict: {'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:04:50,511 ERROR frappe New Exception collected with id: 2024-03-07 14:04:50.510046-127.0.0.1-902
+Site: pali
+Form Dict: {'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:05:29,706 ERROR frappe New Exception collected with id: 2024-03-07 14:05:29.705459-127.0.0.1-f6a
+Site: pali
+Form Dict: {'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:23:49,279 ERROR frappe New Exception collected with id: 2024-03-07 14:23:49.092947-127.0.0.1-6a0
+Site: pali
+Form Dict: {'frm': 'abu daqa family- 8 members', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:24:04,731 ERROR frappe New Exception collected with id: 2024-03-07 14:24:04.729513-127.0.0.1-30f
+Site: pali
+Form Dict: {'frm': 'abd alraaei', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:24:42,802 ERROR frappe New Exception collected with id: 2024-03-07 14:24:42.782654-127.0.0.1-cd0
+Site: pali
+Form Dict: {'frm': 'abd alraaei', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:25:08,021 ERROR frappe New Exception collected with id: 2024-03-07 14:25:08.019472-127.0.0.1-825
+Site: pali
+Form Dict: {'frm': 'abu daqa family- 8 members', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:25:41,695 ERROR frappe New Exception collected with id: 2024-03-07 14:25:41.694233-127.0.0.1-5c9
+Site: pali
+Form Dict: {'frm': 'al najar family- 6 members', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:29:15,613 ERROR frappe New Exception collected with id: 2024-03-07 14:29:15.568161-127.0.0.1-cab
+Site: pali
+Form Dict: {'name': 'al dayim', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 14:29:33,554 ERROR frappe New Exception collected with id: 2024-03-07 14:29:33.550065-127.0.0.1-b33
+Site: pali
+Form Dict: {'name': 'al dayim', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 15:59:42,629 ERROR frappe New Exception collected with id: 2024-03-07 15:59:42.572376-127.0.0.1-7af
+Site: pali
+Form Dict: {'doc': '{"name":"49a87aa4e4","owner":"Administrator","creation":"2024-03-07 15:02:26.573573","modified":"2024-03-07 15:58:30.456189","modified_by":"Administrator","idx":0,"docstatus":0,"family_name__last_name_":"skaik -8 members","rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"2e1d1dcbc3","owner":"Administrator","creation":"2024-03-07 15:02:26.573573","modified":"2024-03-07 15:58:30.456189","modified_by":"Administrator","parent":"49a87aa4e4","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"monir","age":20,"passport_number":"98765","doctype":"Basic Information"}],"__last_sync_on":"2024-03-07T13:59:37.895Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-03-07 16:00:07,370 ERROR frappe New Exception collected with id: 2024-03-07 16:00:07.364540-127.0.0.1-f58
+Site: pali
+Form Dict: {'doc': '{"name":"49a87aa4e4","owner":"Administrator","creation":"2024-03-07 15:02:26.573573","modified":"2024-03-07 15:58:30.456189","modified_by":"Administrator","idx":0,"docstatus":0,"family_name__last_name_":"skaik -8 members","rent_cost":0,"location":0,"is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"doctype":"Registered People","enter_your_family_data_each_person_in_a_row":[{"name":"2e1d1dcbc3","owner":"Administrator","creation":"2024-03-07 15:02:26.573573","modified":"2024-03-07 15:58:30.456189","modified_by":"Administrator","parent":"49a87aa4e4","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"docstatus":0,"first_name":"monir","age":20,"passport_number":"98765","doctype":"Basic Information"}],"__last_sync_on":"2024-03-07T13:59:37.895Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-03-07 16:16:27,124 ERROR frappe New Exception collected with id: 2024-03-07 16:16:27.121178-127.0.0.1-72e
+Site: pali
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Registered People","name":"new-registered-people-2","__islocal":1,"__unsaved":1,"owner":"Administrator","is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"family_name__last_name_":"skaik"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-03-07 16:18:57,485 ERROR frappe New Exception collected with id: 2024-03-07 16:18:57.097570-127.0.0.1-d05
+Site: pali
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Registered People","name":"new-registered-people-1","__islocal":1,"__unsaved":1,"owner":"Administrator","is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"family_name__last_name_":"skaik"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-03-07 16:37:31,957 ERROR frappe New Exception collected with id: 2024-03-07 16:37:31.951204-127.0.0.1-c2f
+Site: pali
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Registered People","name":"new-registered-people-2","__islocal":1,"__unsaved":1,"owner":"Administrator","is_there_any_medical_needs_for_the_family":0,"do_you_need_clothes_from_the_boutique":0,"do_you_need_food":0,"do_you_need_essential_home_accessories_that_you_cant_afford":0,"family_name__last_name_":"jiijijij","enter_your_family_data_each_person_in_a_row":[{"docstatus":0,"doctype":"Basic Information","name":"new-basic-information-1","__islocal":1,"__unsaved":1,"owner":"Administrator","parent":"new-registered-people-2","parentfield":"enter_your_family_data_each_person_in_a_row","parenttype":"Registered People","idx":1,"__unedited":false,"first_name":"kjkjjkkj"}]}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-03-07 17:33:37,523 ERROR frappe New Exception collected with id: 2024-03-07 17:33:37.479155-127.0.0.1-2fd
+Site: pali
+Form Dict: {'name': 'vhkgifyilg', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 17:33:49,627 ERROR frappe New Exception collected with id: 2024-03-07 17:33:49.583441-127.0.0.1-e86
+Site: pali
+Form Dict: {'name': 'vhkgifyilg', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 17:34:02,631 ERROR frappe New Exception collected with id: 2024-03-07 17:34:02.587575-127.0.0.1-f97
+Site: pali
+Form Dict: {'name': 'vhkgifyilg', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 17:34:23,164 ERROR frappe New Exception collected with id: 2024-03-07 17:34:23.118449-127.0.0.1-c1a
+Site: pali
+Form Dict: {'name': 'vhkgifyilg', 'cmd': 'charity_app.api.send_to_checkList'}
+2024-03-07 17:35:42,025 ERROR frappe New Exception collected with id: 2024-03-07 17:35:41.954149-127.0.0.1-f6c
+Site: pali
+Form Dict: {'name': 'vhkgifyilg', 'cmd': 'charity_app.api.send_to_checkList'}

@@ -2,5 +2,7 @@
  "db_name": "_84fc5b246d98b743",
  "db_password": "29n1lk7R8BbLB6uW",
  "db_type": "mariadb",
+ "developer-mode": 1,
+ "developer_mode": 1,
  "encryption_key": "Mkhk5K28qAXKSBnPaRtpXhi64MMdIlvHXJK_Wx3DBns="
 }
